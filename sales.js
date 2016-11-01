@@ -5,11 +5,18 @@ function addItem()
   var newItem;
   newItem = document.getElementById("price").value;
   if (isNaN(newItem)){
-    window.alert("This is not a number");
+    window.alert("Enter price as a number");
   }
   else {
-    
-  }
+    newItem = Number(newItem);
+    runningTotal = runningTotal + newItem;
+    console.log(runningTotal);
+
+    }
+  var dollars;
+  dollars = asCurrency(runningTotal);
+  console.log(dollars);
+  document.getElementById("subtotal").innerHTML=dollars;
   //IF newItem is not a number
   // THEN show an alert: "Enter price as a number"
   //OTHERWISE,
