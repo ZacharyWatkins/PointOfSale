@@ -10,12 +10,10 @@ function addItem()
   else {
     newItem = Number(newItem);
     runningTotal = runningTotal + newItem;
-    console.log(runningTotal);
 
     }
   var dollars;
   dollars = asCurrency(runningTotal);
-  console.log(dollars);
   document.getElementById("subtotal").innerHTML=dollars;
   document.getElementById("price").innerHTML="";
   setCookie("preTax",runningTotal);
@@ -36,7 +34,6 @@ function asCurrency(val)
   return "$" + val.toFixed(2);
 }
 function calculateReceipt() {
-  window.alert("hello");
   var receiptSubtotal;
   var receiptTax;
   var receiptTotal;
@@ -44,11 +41,10 @@ function calculateReceipt() {
   receiptSubtotal = Number(receiptSubtotal);
   receiptTax = receiptSubtotal * 0.075;
   receiptTotal = receiptTax + receiptSubtotal;
-  receiptTax = receiptTax.toFixed(2);
+  receiptTax = receiptTax.toFixed(3);
   document.getElementById("sub").innerHTML=receiptSubtotal;
   document.getElementById("tot").innerHTML=receiptTotal;
   document.getElementById("tax").innerHTML=receiptTax;
-  console.log(receiptTax);
 }
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
