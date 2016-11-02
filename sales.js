@@ -46,7 +46,7 @@ function setCookie(cname, cvalue, exdays) {
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function getCookie(cname) {
   var name = cname + "=";
-  var ca = document.cookie.split(';');
+  var ca = runningTotal;
     for(var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
