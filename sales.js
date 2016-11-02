@@ -44,6 +44,7 @@ function calculateReceipt() {
   receiptSubtotal = Number(receiptSubtotal);
   receiptTax = receiptSubtotal * 0.075;
   receiptTotal = receiptTax + receiptSubtotal;
+  receiptTax = receiptTax.toFixed(2);
   document.getElementById("sub").innerHTML=receiptSubtotal;
   document.getElementById("tot").innerHTML=receiptTotal;
   document.getElementById("tax").innerHTML=receiptTax;
