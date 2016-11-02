@@ -18,6 +18,7 @@ function addItem()
   console.log(dollars);
   document.getElementById("subtotal").innerHTML=dollars;
   document.getElementById("price").innerHTML="";
+  setCookie("preTax",runningTotal);
   //IF newItem is not a number
   // THEN show an alert: "Enter price as a number"
   //OTHERWISE,
@@ -29,7 +30,6 @@ function addItem()
   // update the value of the input with the id "price" to be an empty string
   // update a cookie called "preTax" with the value of runningTotal
 }
-setCookie("preTax",runningTotal);
 //takes a number and gives a string with the number displayed as USD currency
 function asCurrency(val)
 {
@@ -46,7 +46,7 @@ function setCookie(cname, cvalue, exdays) {
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function getCookie(cname) {
   var name = cname + "=";
-  var ca = runningTotal;
+  var ca = document.cookie.split(';');
     for(var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
